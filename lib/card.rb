@@ -1,3 +1,4 @@
+
 class Card
 
     attr_accessor :question, :answer, :category
@@ -6,6 +7,7 @@ class Card
      @question = question
      @answer = answer
      @category = category
-    
      end
+
+     
     end

@@ -1,24 +1,19 @@
-require 'pry'
-
-
-class Round 
-
-    attr_accessor :guess, :card
-
-        def initialize(guess, card)
-            @guess = guess
-            @card = card
-        end
-
-        def correct? 
-            feedback == "Correct!"
-        end 
-
-        def feedback
-            if @guess == @card.answer
-            "Correct!"
-            else
-            "Sorry.."
-        end
+class Round
+    attr_reader :deck, :turns
+  
+    def initialize(deck)
+      @deck = deck
+      @turns = []
     end
-end
+  
+    def current_card
+      @deck.cards.first
+    end
+  
+    def take_turn(guess)
+      player_turn = Turn.new(guess, current_card)
+      @turns << player_turn
+      # @deck.cards.shift
+      player_turn
+    end
+  end

@@ -1,10 +1,10 @@
 
 require 'minitest/autorun'
 require 'minitest/pride'
-require '../lib/card'
-require '../lib/turn'
-require '../lib/deck'
-require '../lib/round'
+require './lib/card'
+require './lib/turn'
+require './lib/deck'
+require './lib/round'
 require 'pry'
 
 class RoundTest < Minitest::Test
@@ -52,7 +52,6 @@ class RoundTest < Minitest::Test
   def test_new_turn_is_a_turn_class
     round = Round.new(@deck)
     assert_equal Turn, round.take_turn("guess").class
-    # does the same as above test
   end
 
   def test_after_first_turn

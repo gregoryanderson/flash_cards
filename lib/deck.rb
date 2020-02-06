@@ -1,24 +1,23 @@
-require 'pry'
+class Deck
 
-
-class Round 
-
-    attr_accessor :guess, :card
-
-        def initialize(guess, card)
-            @guess = guess
-            @card = card
-        end
-
-        def correct? 
-            feedback == "Correct!"
-        end 
-
-        def feedback
-            if @guess == @card.answer
-            "Correct!"
-            else
-            "Sorry.."
-        end
+    attr_reader :cards
+    
+    def initialize(cards)
+        @cards = cards
     end
-end
+  
+    def count
+        @cards.count
+    end
+
+    def cards_in_category(category)
+        filtered_cards = []
+        cards.each do |card|
+          if card.category == category
+            filtered_cards << card
+          end
+        end
+        filtered_cards
+    end
+
+  end

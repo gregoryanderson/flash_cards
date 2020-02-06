@@ -1,8 +1,8 @@
 require 'minitest/autorun'
 require 'minitest/pride'
-require '../lib/card'
-require '../lib/turn'
-require '../lib/deck'
+require './lib/card'
+require './lib/turn'
+require './lib/deck'
 require 'pry'
 
 class DeckTest < Minitest::Test
@@ -19,7 +19,7 @@ class DeckTest < Minitest::Test
 
   def test_it_has_three_cards
     # assert_equal 3, @deck.cards.count
-    assert_equal @cards, @deck.cards
+    assert_equal @cards.count, @deck.cards.count
   end
 
   def test_it_counts_total_cards
